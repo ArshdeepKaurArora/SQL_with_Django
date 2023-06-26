@@ -1,0 +1,15 @@
+{% extends 'book_outlet/base.html' %}
+
+{% block title %}
+    All Book
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for book in books %}
+        <li><a rel='stylesheet' href={{book.get_absolute_url}}>{{book.title}} (Rank - {{book.ranking}})</a></li>
+    {% endfor %}
+</ul>
+<p>Total books in collection are {{total_books}}</p>
+<p>Average ranking of our collection is {{average_rank.ranking__avg}}</p>
+{% endblock %}

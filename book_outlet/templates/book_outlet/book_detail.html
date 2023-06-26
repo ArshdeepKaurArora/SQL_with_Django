@@ -1,0 +1,16 @@
+{% extends 'book_outlet/base.html' %}
+
+{% block title %}
+    {{book.title}}
+{% endblock %}
+
+{% block content %}
+<h1>Title: {{book.title}}</h1>
+<h2>Author: {{book.author}}</h2>
+<p>The book is on {{book.ranking}} rank
+    {% if book.is_famous %}
+    and is famous as well.
+    {% else %}
+    but isn't famous.
+    {% endif %}</p>
+{% endblock %}
